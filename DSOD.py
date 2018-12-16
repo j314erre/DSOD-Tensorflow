@@ -1,3 +1,5 @@
+# Google Translate comments in https://github.com/Windaway/DSOD-Tensorflow/blob/master/DSOD.py
+
 import os
 import gc
 import xml.etree.ElementTree as etxml

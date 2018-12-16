@@ -83,7 +83,7 @@ def get_traindata_voc(batch_size):
                 y_min = float(bndbox.find('ymin').text.strip())
                 x_max = float(bndbox.find('xmax').text.strip())
                 y_max = float(bndbox.find('ymax').text.strip())
-                # 位置数据用比例来表示，格式[center_x,center_y,width,height,lable]
+                # Location data is expressed in proportions, format [center_x,center_y,width,height,lable]
                 actual_item.append([((x_min + x_max) / 2 / img_width), ((y_min + y_max) / 2 / img_height),
                                     ((x_max - x_min) / img_width), ((y_max - y_min) / img_height), lable])
             return actual_item
@@ -215,7 +215,7 @@ def get_traindata_voc(batch_size):
     return train_data, actual_data, file_list
 
 def generate_groundtruth_data(input_actual_data):
-    # 生成空数组，用于保存groundtruth
+    # Generate an empty array to hold the groundtruth
     input_actual_data_len = len(input_actual_data)
     gt_class = np.zeros((input_actual_data_len, all_default_boxs_len))
     gt_location = np.zeros((input_actual_data_len, all_default_boxs_len, 4))

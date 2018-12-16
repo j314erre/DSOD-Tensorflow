@@ -223,7 +223,7 @@ def generate_groundtruth_data(input_actual_data):
     gt_positives = np.zeros((input_actual_data_len, all_default_boxs_len))
     gt_negatives = np.zeros((input_actual_data_len, all_default_boxs_len))
     background_jacc = max(0, (jaccard_value - 0.2))
-    # 初始化正例训练数据
+    # Initialize positive training data
     for img_index in range(input_actual_data_len):
         for pre_actual in input_actual_data[img_index]:
             gt_class_val = pre_actual[-1:][0]
@@ -239,9 +239,9 @@ def generate_groundtruth_data(input_actual_data):
                     gt_positives_jacc[img_index][boxe_index] = jacc
                     gt_positives[img_index][boxe_index] = 1
                     gt_negatives[img_index][boxe_index] = 0
-        # 如果没有正例，则随机创建一个正例，预防nan
+        # If there is no positive case, randomly create a positive example to prevent nan
         if np.sum(gt_positives[img_index]) == 0:
-            # print('【没有匹配jacc】:'+str(input_actual_data[img_index]))
+            # print('【No match jacc】:'+str(input_actual_data[img_index]))
             random_pos_index = np.random.randint(low=0, high=all_default_boxs_len, size=1)[0]
             gt_class[img_index][random_pos_index] = background_classes_val
             gt_location[img_index][random_pos_index] = [0.00001, 0.00001, 0.00001, 0.00001]
@@ -269,7 +269,7 @@ def jaccard(rect1, rect2):
     y_overlap = max(0, (min(rect1[1] + (rect1[3] / 2), rect2[1] + (rect2[3] / 2)) - max(rect1[1] - (rect1[3] / 2),
                                                                                         rect2[1] - (rect2[3] / 2))))
     intersection = x_overlap * y_overlap
-    # 删除超出图像大小的部分
+    # Delete the portion that exceeds the image size
     rect1_width_sub = 0
     rect1_height_sub = 0
     rect2_width_sub = 0
@@ -416,7 +416,7 @@ def inference(inputs, is_train, reuse):
         feature_location = tmp_all_feature[:, :, classes_size:]
         print('##   feature_class shape : ' + str(feature_class.get_shape().as_list()))
         print('##   feature_location shape : ' + str(feature_location.get_shape().as_list()))
-        # 生成所有default boxs
+        # Generate all default boxs
         global all_default_boxs
         all_default_boxs = generate_all_default_boxs()
         # print(all_default_boxs)

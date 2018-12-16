@@ -35,9 +35,9 @@ box_aspect_ratio = [
     [0.5, 1.0, 2.0, 3.0, 1 / 3.0],
     [0.5, 1.0, 2.0, 3.0, 1 / 3.0]
 ]
-# 最小default box面积比例
+# Minimum default box area ratio
 min_box_scale = 0.1
-# 最大default box面积比例
+# Maximum default box area ratio
 max_box_scale = 0.9
 # 每个特征层的面积比例
 # numpy生成等差数组，效果等同于论文中的s_k=s_min+(s_max-s_min)*(k-1)/(m-1)

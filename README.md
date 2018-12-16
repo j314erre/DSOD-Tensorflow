@@ -1,8 +1,13 @@
-DSOD的Tensorflow实现。
+[Google Translate version of Windaway/DSOD-Tensorflow]
+
+
+
+
+
+DSOD's Tensorflow implementation.
 -------------------
 
-使用Tensorlayer和Skimage等，过程中使用了自己修改后的Tensorlayer增广，上传前修改应该能在原始TL跑，没测试代码。按论文可以在VOC07+12上训练吧，Loss那块Loc给了高权重。
+Using Tensorlayer and Skimage, etc., the modified Tensorlayer is used in the process. The pre-upload modification should be able to run in the original TL without testing the code. According to the paper, you can train on VOC07+12, and Los Loc gives high weight.
 
-源码框架参考[jasonli8848d](https://github.com/lslcode/SSD_for_Tensorflow)的工作，做了一些修改。主要是Groundtruth那块还有增广。另外这个代码增广极度耗费CPU资源，训练效率很低，收敛也不快。有问题可以到[某乎](https://zhuanlan.zhihu.com/p/33957333)评论或者给我发邮件，colinyoo#outlook#com。虽然未必能给予帮助。
-
+The source framework referenced the work of jasonli8848d and made some changes. Mainly Groundtruth that there is augmentation. In addition, the augmentation of this code consumes a lot of CPU resources, the training efficiency is very low, and the convergence is not fast. If you have any questions, please go to a comment or email me, colinyoo#outlook#com. Although it may not be able to help.
 

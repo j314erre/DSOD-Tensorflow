@@ -471,7 +471,7 @@ def check_numerics(input_dataset, message):
         inf_count = len(dataset[dataset == float("inf")])
         n_inf_count = len(dataset[dataset == float("-inf")])
         if nan_count > 0 or inf_count > 0 or n_inf_count > 0:
-            data_error = '【' + message + '】出现数据错误！【nan：' + str(nan_count) + '|inf：' + str(
+            data_error = '【' + message + '】A data error has occurred!【nan：' + str(nan_count) + '|inf：' + str(
                 inf_count) + '|-inf：' + str(n_inf_count) + '】'
             raise Exception(data_error)
     return input_dataset

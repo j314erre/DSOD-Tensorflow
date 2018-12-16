@@ -39,11 +39,11 @@ box_aspect_ratio = [
 min_box_scale = 0.1
 # Maximum default box area ratio
 max_box_scale = 0.9
-# 每个特征层的面积比例
-# numpy生成等差数组，效果等同于论文中的s_k=s_min+(s_max-s_min)*(k-1)/(m-1)
+# Area ratio of each feature layer
+# Numpy generates an array of equals, the effect is equivalent to the paper s_k=s_min+(s_max-s_min)*(k-1)/(m-1)
 default_box_scale = np.linspace(min_box_scale, max_box_scale, num=np.amax(default_box_size))
 print('##   default_box_scale:' + str(default_box_scale))
-# 卷积步长
+# Convolution step
 conv_strides_1 = [1, 1, 1, 1]
 conv_strides_2 = [1, 2, 2, 1]
 conv_strides_3 = [1, 3, 3, 1]
@@ -51,17 +51,17 @@ conv_strides_3 = [1, 3, 3, 1]
 tl_strides_1 = (1, 1)
 tl_strides_2 = (2, 2)
 tl_strides_3 = (3, 3)
-# 池化窗口
+# Pooled window
 pool_size = [1, 2, 2, 1]
 tl_pool_size = (2, 2)
-# 池化步长
+# Pooling step
 pool_strides = [1, 2, 2, 1]
 tl_pool_strides = (2, 2)
-# Batch Normalization 算法的 decay 参数
+# Batch Normalization Algorithm's decay parameter
 conv_bn_decay = 0.9999
-# Batch Normalization 算法的 variance_epsilon 参数
+# Batch Normalization The variance_epsilon parameter of the algorithm
 conv_bn_epsilon = 0.001
-# Jaccard相似度判断阀值
+# Jaccard similarity judgment threshold
 jaccard_value = 0.55
 feature_maps_shape=[]
 all_default_boxs_len=0

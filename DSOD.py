@@ -24,9 +24,9 @@ img_size = [300, 300]
 classes_size = 21
 # Background classification value
 background_classes_val = 0
-# 每个特征图单元的default box数量
+# The number of default boxes per feature map unit
 default_box_size = [6, 6, 6, 6, 6, 6]
-# default box 尺寸长宽比例
+# Default box size
 box_aspect_ratio = [
     [0.5, 1.0, 2.0, 3.0,1/3.0],
     [0.5, 1.0, 2.0, 3.0, 1 / 3.0],

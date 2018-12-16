@@ -20,9 +20,9 @@ running_count = 5000
 file_name_list = os.listdir('./train_datasets/voc2012/JPEGImages/')
 lable_arr = ['background','aeroplane','bicycle','bird','boat','bottle','bus','car','cat','chair','cow','diningtable','dog','horse','motorbike','person','pottedplant','sheep','sofa','train','tvmonitor']
 img_size = [300, 300]
-# 分类总数量
+# Total number of categories
 classes_size = 21
-# 背景分类的值
+# Background classification value
 background_classes_val = 0
 # 每个特征图单元的default box数量
 default_box_size = [6, 6, 6, 6, 6, 6]

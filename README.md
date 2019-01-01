@@ -1,4 +1,4 @@
-[Google Translate version of Windaway/DSOD-Tensorflow]
+[this repo is a Google Translate version of Windaway/DSOD-Tensorflow]
 
 
 
